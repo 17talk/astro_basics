@@ -1,4 +1,7 @@
 ---
+const name = "nelson";
+const items = ["Dog", "Cat", "Platypus"];
+const visible = false;
 ---
 
 <html lang="en">
@@ -10,6 +13,21 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>My Astro Site3</h1>
+		<h1>hello {name}</h1>
+		<h1 class={name}>test class</h1>
+
+		<button id="button">Click Me</button>
+		<ul>
+			{items.map((item) => <li>{item}</li>)}
+		</ul>
+		{visible && <p>I'm visible!</p>}
+
+		{visible ? <p>I'm visible!</p> : <p>I'm not visible!</p>}
 	</body>
 </html>
+<script>
+	function handleClick() {
+		console.log("button clicked!");
+	}
+	document.getElementById("button").addEventListener("click", handleClick);
+</script>
